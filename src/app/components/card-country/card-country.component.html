@@ -1,0 +1,58 @@
+<div style="background-size: 30px;">
+
+    <div class="card-columns" style="background-color:black; padding: 30px;">
+
+        <div *ngFor="let pais of paises " class="card" (click)="openModal(modal, pais)">
+
+            <img [src]="pais.flag" class="card-img-bottom " alt="card image card-body">
+            <div class="card-body">
+
+                <h5 class="card-titlen background-img"> {{pais.name}} </h5>
+                <div class="wrapper border-right ">
+                    <div class="border-right separador "> Languages
+                        <div *ngFor="let language of pais.languages" class="one"> {{language.name}} </div>
+                    </div>
+                    <div class=" border-right separador"> Currencies
+                        <div *ngFor="let currency of pais.currencies " class="two" style="border-right: 10px;"> {{currency.code}} </div>
+                    </div>
+                    <div class="separador"> Continent
+                        <div class="three border-right"> {{pais.region}} </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">  </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #modal>
+    <div style="width: 150px;" style=" size:50px;" style="margin: 15px;">
+        <img [src]="pais.flag" class="card-img-bottom " alt="card image card-body">
+    </div>
+
+    <app-mapa [latLng]="pais.latlng" style="margin: 20px;"></app-mapa>
+
+    <div style="  padding: 10px; border: 1px solid; margin: 10px;">
+        <strong>Pais:</strong> <strong> {{pais.name}} </strong>
+    </div>
+
+    <div style=" padding: 10px; border: 1px solid; margin: 10px;">
+        <strong>Population:</strong> <strong> {{pais.population}} </strong>
+    </div>
+
+    <div style=" padding: 10px; border: 1px solid; margin: 10px;">
+        <strong> Subregion:</strong> <strong> {{pais.subregion}} </strong>
+    </div>
+
+    <div style=" padding: 10px; border: 1px solid; margin: 10px;">
+        <strong> Borders: </strong> <strong> {{ pais.borders }} </strong>
+    </div>
+    <div style=" padding: 10px; border: 1px solid; margin: 10px;">
+        <strong> Domain: </strong> <strong> {{pais.topLevelDomain}} </strong>
+    </div>
+
+</ng-template>

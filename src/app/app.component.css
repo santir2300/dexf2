@@ -1,0 +1,23 @@
+.main-container {
+    margin: 30px;
+    border: 25px;
+}
+
+;
+.text-lg-center {
+    text-align: center;
+}
+
+;
+.config {
+    border-spacing: 23px;
+}
+
+;
+.selector {
+    width: 10px;
+    padding: 20px 20px;
+    border: groove lightskyblue;
+    border-radius: 3px;
+    background-color: #f1f1f1;
+}

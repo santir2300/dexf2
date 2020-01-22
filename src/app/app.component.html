@@ -1,0 +1,20 @@
+<div style="background-color: black;">
+
+    <div class="main-container text-lg-center">
+        <h1 style="color:goldenrod;"> Countries Of The World </h1>
+
+    </div>
+
+    <body style="background-color: black;">
+
+
+
+        <input type="text" style="border: 1px solid blue;" style="margin:20px; font-size: 20px;" value="" (keyup)="searchFilter($event)">
+
+        <button type="button" style="padding: 10px;" style="margin: 15px;" class="btn btn-primary" #search> Buscar </button>
+
+    </body>
+
+    <!-- <app-home> </app-home> -->
+    <app-card-country [paises]="paisesFiltered"></app-card-country>
+</div>
