@@ -7,14 +7,70 @@
 
     <body style="background-color: black;">
 
+        <html>
+        <style>
+            input[type=text],
+            select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            
+            input[type=submit] {
+                width: 80%;
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+            
+            div {
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 10px;
+            }
+        </style>
+
+        <body>
 
 
-        <input type="text" style="border: 1px solid blue;" style="margin:20px; font-size: 20px;" value="" (keyup)="searchFilter($event)">
+            <div>
+                <form action="/action_page.php">
+                    <label for="fname">Country </label>
+                    <input type="text" value="" (keyup)="searchFilter($event)">
 
-        <button type="button" style="padding: 10px;" style="margin: 15px;" class="btn btn-primary" #search> Buscar </button>
+
+                    <label for="country">filter</label>
+                    <select id="country" name="country" (change)="changeFilter($event)">
+                  <option value="Country">Country</option>
+                  <option value="Languagues">Languagues</option>
+                  <option value="Continent">Continent</option>
+                </select>
+
+                    <button type="button" style="padding: 10px;" style="margin: 10px;" class="btn btn-primary" #search> Buscar </button>
+                </form>
+            </div>
+
+        </body>
+
+        </html>
+
+
+
+
 
     </body>
 
-    <!-- <app-home> </app-home> -->
     <app-card-country [paises]="paisesFiltered"></app-card-country>
 </div>
